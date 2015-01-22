@@ -9,11 +9,21 @@
 /* Begin PBXBuildFile section */
 		434E0B2C1A713B5D00607633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B2B1A713B5D00607633 /* AppDelegate.swift */; };
 		434E0B2F1A713B5D00607633 /* InspectionApp1_5.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B2D1A713B5D00607633 /* InspectionApp1_5.xcdatamodeld */; };
-		434E0B311A713B5D00607633 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B301A713B5D00607633 /* ViewController.swift */; };
+		434E0B311A713B5D00607633 /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B301A713B5D00607633 /* ProjectsViewController.swift */; };
 		434E0B341A713B5D00607633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 434E0B321A713B5D00607633 /* Main.storyboard */; };
 		434E0B361A713B5D00607633 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 434E0B351A713B5D00607633 /* Images.xcassets */; };
 		434E0B391A713B5D00607633 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 434E0B371A713B5D00607633 /* LaunchScreen.xib */; };
 		434E0B451A713B5D00607633 /* InspectionApp1_5Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B441A713B5D00607633 /* InspectionApp1_5Tests.swift */; };
+		434E0B4F1A71409400607633 /* projectimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 434E0B4E1A71409400607633 /* projectimage.jpg */; };
+		434E0B511A7140A400607633 /* index.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 434E0B501A7140A400607633 /* index.jpg */; };
+		434E0B541A7140B400607633 /* images.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 434E0B521A7140B400607633 /* images.jpg */; };
+		434E0B551A7140B400607633 /* images1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 434E0B531A7140B400607633 /* images1.jpg */; };
+		434E0B571A7141F900607633 /* AddProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B561A7141F900607633 /* AddProjectViewController.swift */; };
+		434E0B591A7142BC00607633 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B581A7142BC00607633 /* Project.swift */; };
+		434E0B5B1A71455C00607633 /* Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B5A1A71455C00607633 /* Shared.swift */; };
+		434E0B5D1A714DAD00607633 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B5C1A714DAD00607633 /* Issue.swift */; };
+		434E0B5F1A714E3F00607633 /* IssuesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B5E1A714E3F00607633 /* IssuesTableViewController.swift */; };
+		434E0B611A714E7500607633 /* AddIssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 434E0B601A714E7500607633 /* AddIssueViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,13 +41,23 @@
 		434E0B2A1A713B5D00607633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		434E0B2B1A713B5D00607633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		434E0B2E1A713B5D00607633 /* InspectionApp1_5.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InspectionApp1_5.xcdatamodel; sourceTree = "<group>"; };
-		434E0B301A713B5D00607633 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		434E0B301A713B5D00607633 /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		434E0B331A713B5D00607633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		434E0B351A713B5D00607633 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		434E0B381A713B5D00607633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		434E0B3E1A713B5D00607633 /* InspectionApp1_5Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspectionApp1_5Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		434E0B431A713B5D00607633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		434E0B441A713B5D00607633 /* InspectionApp1_5Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspectionApp1_5Tests.swift; sourceTree = "<group>"; };
+		434E0B4E1A71409400607633 /* projectimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = projectimage.jpg; sourceTree = "<group>"; };
+		434E0B501A7140A400607633 /* index.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = index.jpg; sourceTree = "<group>"; };
+		434E0B521A7140B400607633 /* images.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images.jpg; sourceTree = "<group>"; };
+		434E0B531A7140B400607633 /* images1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = images1.jpg; sourceTree = "<group>"; };
+		434E0B561A7141F900607633 /* AddProjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddProjectViewController.swift; sourceTree = "<group>"; };
+		434E0B581A7142BC00607633 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		434E0B5A1A71455C00607633 /* Shared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shared.swift; sourceTree = "<group>"; };
+		434E0B5C1A714DAD00607633 /* Issue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		434E0B5E1A714E3F00607633 /* IssuesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IssuesTableViewController.swift; sourceTree = "<group>"; };
+		434E0B601A714E7500607633 /* AddIssueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddIssueViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +100,13 @@
 			isa = PBXGroup;
 			children = (
 				434E0B2B1A713B5D00607633 /* AppDelegate.swift */,
-				434E0B301A713B5D00607633 /* ViewController.swift */,
+				434E0B5A1A71455C00607633 /* Shared.swift */,
+				434E0B581A7142BC00607633 /* Project.swift */,
+				434E0B561A7141F900607633 /* AddProjectViewController.swift */,
+				434E0B301A713B5D00607633 /* ProjectsViewController.swift */,
+				434E0B5C1A714DAD00607633 /* Issue.swift */,
+				434E0B601A714E7500607633 /* AddIssueViewController.swift */,
+				434E0B5E1A714E3F00607633 /* IssuesTableViewController.swift */,
 				434E0B321A713B5D00607633 /* Main.storyboard */,
 				434E0B351A713B5D00607633 /* Images.xcassets */,
 				434E0B371A713B5D00607633 /* LaunchScreen.xib */,
@@ -93,6 +119,10 @@
 		434E0B291A713B5D00607633 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				434E0B521A7140B400607633 /* images.jpg */,
+				434E0B531A7140B400607633 /* images1.jpg */,
+				434E0B501A7140A400607633 /* index.jpg */,
+				434E0B4E1A71409400607633 /* projectimage.jpg */,
 				434E0B2A1A713B5D00607633 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -196,8 +226,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				434E0B341A713B5D00607633 /* Main.storyboard in Resources */,
+				434E0B511A7140A400607633 /* index.jpg in Resources */,
+				434E0B4F1A71409400607633 /* projectimage.jpg in Resources */,
 				434E0B391A713B5D00607633 /* LaunchScreen.xib in Resources */,
 				434E0B361A713B5D00607633 /* Images.xcassets in Resources */,
+				434E0B551A7140B400607633 /* images1.jpg in Resources */,
+				434E0B541A7140B400607633 /* images.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -215,8 +249,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				434E0B311A713B5D00607633 /* ViewController.swift in Sources */,
+				434E0B5B1A71455C00607633 /* Shared.swift in Sources */,
+				434E0B5D1A714DAD00607633 /* Issue.swift in Sources */,
+				434E0B571A7141F900607633 /* AddProjectViewController.swift in Sources */,
+				434E0B311A713B5D00607633 /* ProjectsViewController.swift in Sources */,
 				434E0B2C1A713B5D00607633 /* AppDelegate.swift in Sources */,
+				434E0B5F1A714E3F00607633 /* IssuesTableViewController.swift in Sources */,
+				434E0B591A7142BC00607633 /* Project.swift in Sources */,
+				434E0B611A714E7500607633 /* AddIssueViewController.swift in Sources */,
 				434E0B2F1A713B5D00607633 /* InspectionApp1_5.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
