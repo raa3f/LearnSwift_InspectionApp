@@ -16,6 +16,8 @@ class AddProjectViewController: UIViewController, UITextFieldDelegate, UIImagePi
     @IBOutlet weak var companyName: UITextField!
     @IBOutlet weak var projectName: UITextField!
     
+    var imagePicker: UIImagePickerController = UIImagePickerController()
+    
     @IBAction func SaveProject(sender: AnyObject) {
         
         var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
@@ -34,18 +36,39 @@ class AddProjectViewController: UIViewController, UITextFieldDelegate, UIImagePi
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    @IBAction func GetImageFromCamera(sender: AnyObject) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
+        imagePicker.editing = false
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
+    @IBAction func SelectImageFromCameraRoll(sender: AnyObject) {
+        imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+        imagePicker.editing = false
+        self.presentViewController(imagePicker, animated: true, completion: nil)
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imagePicker.delegate = self
         // Do any additional setup after loading the view.
+        
     }
-
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+        projectImage.image = image
+        print("image selected")
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        
         self.view.endEditing(true)
     }
     
@@ -58,7 +81,23 @@ class AddProjectViewController: UIViewController, UITextFieldDelegate, UIImagePi
         
         return true
     }
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardDidShow:", name: UIKeyboardDidShowNotification, object: nil)
+        return true
+    }
     
+    func KeyboardDidShow(notification: NSNotificationCenter ) {
+        self.view.frame = CGRectMake(0,-110,320,460)
+        println("keyboard is up")
+    }
+    
+    func textFieldShouldEndEditing(textField: UITextField) -> Bool {
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "KeyboardDidHide:", name: UIKeyboardDidHideNotification, object: nil)
+        return true;
+    }
+    func KeyboardDidHide(notification: NSNotificationCenter){
+        self.view.frame = CGRectMake(0,0,320,460)
+    }
     /*
     // MARK: - Navigation
 
