@@ -12,18 +12,18 @@ import CoreData
 class AddIssueViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet weak var desc: UITextView!
-    @IBOutlet weak var severity: UITextField!
-    @IBOutlet weak var issueDescription: UITextField!
     @IBOutlet weak var issueImage: UIImageView!
+    @IBOutlet weak var severity: UIPickerView!
     
     @IBAction func SaveIssue(sender: AnyObject) {
         var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         var managedContext: NSManagedObjectContext = appDelegate.managedObjectContext!
         
+ 
         var issue = NSEntityDescription.insertNewObjectForEntityForName("Issues", inManagedObjectContext: managedContext) as NSManagedObject
         issue.setValue(selectedProjectName, forKey: "projectName")
-        issue.setValue(issueDescription.text, forKey: "issueDescription")
-        issue.setValue(severity.text, forKey: "severity")
+        issue.setValue(desc.text, forKey: "issueDescription")
+        issue.setValue("severity", forKey: "severity")
         issue.setValue(NSDate(), forKey: "createdDate")
         issue.setValue(kIssueDefaultImage, forKey: "imagePath")
         

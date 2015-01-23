@@ -17,45 +17,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-bg-08U">
-                                <rect key="frame" x="10" y="77" width="301" height="197"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-bg-08U">
+                                <rect key="frame" x="10" y="135" width="301" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="301" id="BsK-jE-eI3"/>
+                                    <constraint firstAttribute="height" constant="169" id="bL4-R2-iM0"/>
+                                </constraints>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-ET-7oW">
-                                <rect key="frame" x="10" y="299" width="301" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Project Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LqI-ET-7oW">
+                                <rect key="frame" x="10" y="350" width="301" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="rJd-Y3-gVa" id="P8q-bg-4Qu"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reference" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBh-lH-9nz">
-                                <rect key="frame" x="10" y="337" width="301" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Reference" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eBh-lH-9nz">
+                                <rect key="frame" x="10" y="388" width="301" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="rJd-Y3-gVa" id="1hP-ZT-NEo"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXe-eo-2Pu">
-                                <rect key="frame" x="10" y="375" width="301" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Company Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fXe-eo-2Pu">
+                                <rect key="frame" x="10" y="426" width="301" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="rJd-Y3-gVa" id="LAk-hV-Dyz"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O27-YV-J2f">
+                                <rect key="frame" x="10" y="77" width="59" height="45"/>
+                                <state key="normal" title="Select">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SelectImageFromCameraRoll:" destination="rJd-Y3-gVa" eventType="touchUpInside" id="Lvl-on-a3m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YPL-jg-gyW">
+                                <rect key="frame" x="257" y="77" width="54" height="45"/>
+                                <state key="normal" title="Camera">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="GetImageFromCamera:" destination="rJd-Y3-gVa" eventType="touchUpInside" id="KXr-wy-g4a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="jBW-bg-08U" firstAttribute="leading" secondItem="k0x-29-Vmb" secondAttribute="leadingMargin" constant="-6" id="0SN-TK-hNj"/>
+                            <constraint firstItem="YPL-jg-gyW" firstAttribute="top" secondItem="IIA-xB-nQ4" secondAttribute="bottom" constant="8" id="11K-cK-xyz"/>
                             <constraint firstItem="fXe-eo-2Pu" firstAttribute="leading" secondItem="k0x-29-Vmb" secondAttribute="leadingMargin" constant="-6" id="1lB-DP-TKa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fXe-eo-2Pu" secondAttribute="trailing" constant="-7" id="8MQ-F5-RgH"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LqI-ET-7oW" secondAttribute="trailing" constant="-7" id="QDG-Xf-2pY"/>
                             <constraint firstItem="LqI-ET-7oW" firstAttribute="top" secondItem="jBW-bg-08U" secondAttribute="bottom" constant="25" id="QlF-sO-MKS"/>
                             <constraint firstItem="jBW-bg-08U" firstAttribute="top" secondItem="IIA-xB-nQ4" secondAttribute="bottom" constant="13" id="Ydn-hN-krd"/>
+                            <constraint firstItem="O27-YV-J2f" firstAttribute="top" secondItem="IIA-xB-nQ4" secondAttribute="bottom" constant="8" id="atn-9x-KBG"/>
                             <constraint firstItem="fXe-eo-2Pu" firstAttribute="top" secondItem="eBh-lH-9nz" secondAttribute="bottom" constant="8" id="bCU-gr-gFL"/>
                             <constraint firstItem="jBW-bg-08U" firstAttribute="leading" secondItem="k0x-29-Vmb" secondAttribute="leadingMargin" constant="-6" id="ciz-zG-E5t"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eBh-lH-9nz" secondAttribute="trailing" constant="-7" id="fMq-qL-K1F"/>
                             <constraint firstItem="eBh-lH-9nz" firstAttribute="leading" secondItem="k0x-29-Vmb" secondAttribute="leadingMargin" constant="-6" id="imU-M2-urO"/>
+                            <constraint firstItem="jBW-bg-08U" firstAttribute="top" secondItem="IIA-xB-nQ4" secondAttribute="bottom" constant="13" id="n1b-IO-yY2"/>
                             <constraint firstItem="LqI-ET-7oW" firstAttribute="leading" secondItem="k0x-29-Vmb" secondAttribute="leadingMargin" constant="-6" id="xB8-SR-rhy"/>
                             <constraint firstItem="eBh-lH-9nz" firstAttribute="top" secondItem="LqI-ET-7oW" secondAttribute="bottom" constant="8" id="xZj-VC-R0c"/>
                         </constraints>
@@ -93,40 +119,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DoL-To-4fA">
-                                <rect key="frame" x="10" y="302" width="299" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="7cR-XX-DkB" id="zAY-Zg-g3t"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AIq-Qj-5i4">
-                                <rect key="frame" x="10" y="340" width="299" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="7cR-XX-DkB" id="D5U-j4-CJZ"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3BD-5c-WmH">
-                                <rect key="frame" x="10" y="378" width="299" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="7cR-XX-DkB" id="HYv-pJ-wOb"/>
-                                </connections>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQ1-Z5-9eM">
-                                <rect key="frame" x="10" y="72" width="299" height="213"/>
+                                <rect key="frame" x="10" y="72" width="299" height="171"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="met-pE-Di1">
-                                <rect key="frame" x="16" y="416" width="293" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="met-pE-Di1">
+                                <rect key="frame" x="10" y="251" width="297" height="145"/>
+                                <color key="backgroundColor" red="0.94673295454545459" green="0.94673295454545459" blue="0.94673295454545459" alpha="1" colorSpace="calibratedRGB"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Enter Description here...">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="HelveticaNeue"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRc-ap-YFf">
+                                <rect key="frame" x="-2" y="404" width="320" height="162"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -142,9 +153,8 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="desc" destination="met-pE-Di1" id="POl-Pj-8qf"/>
-                        <outlet property="issueDescription" destination="DoL-To-4fA" id="dmw-Hs-huZ"/>
                         <outlet property="issueImage" destination="MQ1-Z5-9eM" id="9n8-Yc-S8M"/>
-                        <outlet property="severity" destination="AIq-Qj-5i4" id="9MH-km-Z9t"/>
+                        <outlet property="severity" destination="JRc-ap-YFf" id="6dG-kM-KNt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="csR-GW-qng" userLabel="First Responder" sceneMemberID="firstResponder"/>
