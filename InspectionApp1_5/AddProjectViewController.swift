@@ -23,12 +23,18 @@ class AddProjectViewController: UIViewController, UITextFieldDelegate, UIImagePi
         var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         var managedContext: NSManagedObjectContext = appDelegate.managedObjectContext!
         
+        
+        //save image to document folder in phone
+        let documentsPath = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        let destinationPath = documentsPath.stringByAppendingPathComponent(projectName.text + ".jpg")
+        UIImageJPEGRepresentation(projectImage.image, 1.0).writeToFile(destinationPath, atomically: true)
+        
         var project = NSEntityDescription.insertNewObjectForEntityForName("Projects", inManagedObjectContext: managedContext) as NSManagedObject
         project.setValue(referenceNo.text, forKey: "referenceNo")
         project.setValue(companyName.text, forKey: "companyName")
         project.setValue(projectName.text, forKey: "projectName")
         project.setValue(NSDate(), forKey: "createdDate")
-        project.setValue(kProjectDefaultImage, forKey: "imagePath")
+        project.setValue(destinationPath, forKey: "imagePath")
         
         managedContext.save(nil)
         
