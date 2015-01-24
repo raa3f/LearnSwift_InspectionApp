@@ -79,26 +79,45 @@ class IssuesTableViewController: UITableViewController {
         
     }
 
-    /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
 
-    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+            if DeleteIssue(issues[indexPath.row]) {
+                issues.removeAtIndex(indexPath.row)
+                // Delete the row from the data source
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            }
+            
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
 
+    func DeleteIssue(issue: Issue) -> Bool {
+        var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        var managedContext: NSManagedObjectContext = appDelegate.managedObjectContext!
+        
+        var request = NSFetchRequest(entityName: "Issues")
+        var result = managedContext.executeFetchRequest(request, error: nil)
+        
+        for i in result as [Issue] {
+            if i == issue {
+                managedContext.deleteObject(i as NSManagedObject)
+                managedContext.save(nil)
+
+                return true
+            }
+        }
+        
+        return false
+    }
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
